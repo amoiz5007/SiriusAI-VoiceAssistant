@@ -1,0 +1,85 @@
+/* General Styles */
+.gradient-bg {
+    background: linear-gradient(120deg, #0A192F, #172A46);
+}
+
+.glass-effect {
+    background: rgba(13, 25, 48, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pulse-animation:hover {
+    transform: scale(1.2);
+}
+
+/* Wave Animation */
+.wave {
+    position: relative;
+    height: 40px;  /* Reduced from 70px */
+    width: 16px;   /* Reduced from 30px */
+    background: linear-gradient(45deg, #64B5F6, #2196F3); /* Added gradient */
+    margin: 0 4px;  /* Reduced from 7px */
+    border-radius: 6px;  /* Reduced from 10px */
+    animation: wave 1.2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(100, 181, 246, 0.4); /* Added subtle glow */
+}
+
+@keyframes wave {
+    0% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+    }
+}
+
+/* Adjusted animation delays for smoother flow */
+.wave:nth-child(1) { animation-delay: 0s; }
+.wave:nth-child(2) { animation-delay: 0.15s; }
+.wave:nth-child(3) { animation-delay: 0.3s; }
+.wave:nth-child(4) { animation-delay: 0.45s; }
+.wave:nth-child(5) { animation-delay: 0.6s; }
+
+/* Response Box */
+.response-box {
+    opacity: 0;
+    height: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.response-box.active {
+    opacity: 1;
+    height: auto;
+    min-height: 100px;
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
